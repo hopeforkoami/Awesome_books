@@ -1,0 +1,23 @@
+body {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#new-book {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  border: 0;
+  padding-left: 0;
+}
+
+#list-book {
+  width: 100vw;
+  list-style: none;
+  padding-left: 0;
+}
