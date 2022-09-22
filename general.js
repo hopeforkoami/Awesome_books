@@ -4,10 +4,12 @@ const contactMenu = document.querySelector('.book_contact_section');
 const menuElements = [listMenu, addMenu, contactMenu];
 function setActive(index) {
   menuElements.forEach((element, key) => {
-    if (key == index) {
-      element.classList.contains('nav-link-visited') ? true : element.classList.toggle('nav-link-visited');
-    } else {
-      element.classList.contains('nav-link-visited') ? element.classList.remove('nav-link-visited') : true;
+    if (key === index) {
+      if (!element.classList.contains('nav-link-visited')) {
+        element.classList.toggle('nav-link-visited');
+      }
+    } else if (element.classList.contains('nav-link-visited')) {
+      element.classList.remove('nav-link-visited');
     }
   });
 }
@@ -15,31 +17,25 @@ function setActive(index) {
 function displayComponent(elmnts) {
   if (elmnts.isArray) {
     elmnts.forEach((elmnt) => {
-      test = elmnt.classList;
-      test.contains('hidden_item') ? test.remove('hidden_item') : true;
+      const test = elmnt.classList;
+      if (test.contains('hidden_item')) {
+        test.remove('hidden_item');
+      }
     });
   } else {
-    test = elmnts.classList;
-    test.contains('hidden_item') ? test.remove('hidden_item') : true;
+    const test = elmnts.classList;
+    if (test.contains('hidden_item')) {
+      test.remove('hidden_item');
+    }
   }
 }
 function HideComponent(elmntsParam) {
-  elmnts = Array.from(elmntsParam);
-  /* console.log(elmnts.isArray);
-  if(elmnts.isArray){
-    elmnts.forEach(elmnt => {
-      test = elmnt.classList;
-      test.contains('hidden_item')?true:test.toggle('hidden_item');
-    });
-  }
-  else{
-    test = elmnts.classList;
-    console.log(elmnts);
-    test.contains('hidden_item')?true:test.toggle('hidden_item');
-  } */
+  const elmnts = Array.from(elmntsParam);
   elmnts.forEach((elmnt) => {
-    test = elmnt.classList;
-    test.contains('hidden_item') ? true : test.toggle('hidden_item');
+    const test = elmnt.classList;
+    if (!test.contains('hidden_item')) {
+      test.toggle('hidden_item');
+    }
   });
 }
 
@@ -91,7 +87,7 @@ function generateDateEnd(day) {
 }
 
 function generateFormatedHour(actualdate) {
-  hour = actualdate.getHours();
+  const hour = actualdate.getHours();
   if (hour === 12) {
     return `${hour}:${actualdate.getMinutes()}:${actualdate.getSeconds()} am`;
   }
@@ -109,10 +105,7 @@ function displayDateTime() {
   const actualDate = new Date();
   const options = { year: 'numeric', month: 'long', day: '2-digit' };
   const date = actualDate.toLocaleDateString('us-US', options);
-  const time = `${(`0${actualDate.getHours()}`).slice(-2)}:${(`0${actualDate.getMinutes()}`).slice(-2)}:${(`0${actualDate.getSeconds()}`).slice(-2)}`;
-  const dateTime = `${date} ${time}`;
-  console.log();
-  reformat = date.split(',');
+  const reformat = date.split(',');
   const dayend = generateDateEnd(actualDate.getDate());
   document.querySelector('.date').innerHTML = `${reformat[0] + dayend}, ${reformat[1]}  ${generateFormatedHour(actualDate)}`;
 }

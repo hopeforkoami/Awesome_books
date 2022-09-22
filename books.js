@@ -18,16 +18,13 @@ class BookPage {
   }
 
   refreshBookList() {
-    // update the innerhtml value of books
     let response = '';
-    console.log(this.booklist.length);
     if (this.booklist.length > 0) {
       this.booklist.forEach((book, index) => {
         response += book.generateBookLi(index);
       });
       document.querySelector('.books').innerHTML = response;
     } else {
-      console.log('no data');
       document.querySelector('.books').classList.toggle('hidden_item');
     }
   }
@@ -43,38 +40,25 @@ const author = document.querySelector('.author');
 function displayComponent(elmnts) {
   if (elmnts.isArray) {
     elmnts.forEach((elmnt) => {
-      test = elmnt.classList;
-      test.contains('hidden_item') ? test.remove('hidden_item') : true;
+      const test = elmnt.classList;
+      if (test.contains('hidden_item')) {
+        test.remove('hidden_item');
+      }
     });
   } else {
-    if (!test.contains('hidden_item')) {
+    const test = elmnts.classList;
+    if (test.contains('hidden_item')) {
       test.remove('hidden_item');
     }
-    test = elmnts.classList;
-    test.contains('hidden_item') ? test.remove('hidden_item') : true;
   }
 }
 function HideComponent(elmntsParam) {
   const elmnts = Array.from(elmntsParam);
-  /* console.log(elmnts.isArray);
-  if(elmnts.isArray){
-    elmnts.forEach(elmnt => {
-      test = elmnt.classList;
-      test.contains('hidden_item')?true:test.toggle('hidden_item');
-    });
-  }
-  else{
-    test = elmnts.classList;
-    console.log(elmnts);
-    test.contains('hidden_item')?true:test.toggle('hidden_item');
-  } */
   elmnts.forEach((elmnt) => {
     const test = elmnt.classList;
     if (!test.contains('hidden_item')) {
       test.toggle('hidden_item');
     }
-    // let rep = test.contains('hidden_item') ? true : test.toggle('hidden_item');
-    // rep = 0;
   });
 }
 
