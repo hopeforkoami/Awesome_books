@@ -1,48 +1,45 @@
 body {
-	font-family: 'Poppins', sans-serif
+  font-family: 'Poppins', sans-serif;
 }
 
-
 .nav-menu {
-	border: 3px solid black;
-	list-style: none;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	
+  border: 3px solid black;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-title {
-	font-weight: bold;
-	font-size: 16px;	
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .nav-link {
-	text-align: center;
-	margin-right: 10px;
+  text-align: center;
+  margin-right: 10px;
 }
 
 .nav-link:hover {
-	text-decoration: underline;
-	font-weight: bolder;
-	font-size: larger;
-	cursor: pointer;
+  text-decoration: underline;
+  font-weight: bolder;
+  font-size: larger;
+  cursor: pointer;
 }
 
 .nav-link-visited {
-	color: blue;
-	text-decoration: underline;
+  color: blue;
+  text-decoration: underline;
 }
 
 .menuItems {
-	display: flex;
-	gap: 1em;
-	justify-items: center;
+  display: flex;
+  gap: 1em;
+  justify-items: center;
 }
 
 footer {
-
   display: flex;
   width: 100%;
   border: 2px solid #000;
@@ -53,10 +50,6 @@ footer p {
   padding-left: 2%;
 }
 
-contact {
-  display: none;
-}
-
 .contact {
   width: 100%;
   display: flex;
@@ -65,7 +58,7 @@ contact {
 }
 
 .contact p {
-	font-size: larger;
+  font-size: larger;
 }
 
 .contact li {
@@ -73,6 +66,6 @@ contact {
 }
 
 .date {
-display: flex;
-justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }

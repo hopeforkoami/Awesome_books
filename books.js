@@ -47,12 +47,15 @@ function displayComponent(elmnts) {
       test.contains('hidden_item') ? test.remove('hidden_item') : true;
     });
   } else {
+    if (!test.contains('hidden_item')) {
+      test.remove('hidden_item');
+    }
     test = elmnts.classList;
     test.contains('hidden_item') ? test.remove('hidden_item') : true;
   }
 }
 function HideComponent(elmntsParam) {
-  elmnts = Array.from(elmntsParam);
+  const elmnts = Array.from(elmntsParam);
   /* console.log(elmnts.isArray);
   if(elmnts.isArray){
     elmnts.forEach(elmnt => {
@@ -66,8 +69,12 @@ function HideComponent(elmntsParam) {
     test.contains('hidden_item')?true:test.toggle('hidden_item');
   } */
   elmnts.forEach((elmnt) => {
-    test = elmnt.classList;
-    test.contains('hidden_item') ? true : test.toggle('hidden_item');
+    const test = elmnt.classList;
+    if (!test.contains('hidden_item')) {
+      test.toggle('hidden_item');
+    }
+    // let rep = test.contains('hidden_item') ? true : test.toggle('hidden_item');
+    // rep = 0;
   });
 }
 
