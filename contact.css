@@ -8,21 +8,37 @@ body {
 	list-style: none;
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 	
 }
 
 .nav-title {
 	font-weight: bold;
 	font-size: 16px;	
-	margin-top: 15px;
-	margin-right: 71%;
 }
 
 .nav-link {
 	text-align: center;
 	margin-right: 10px;
-	padding: 15px;
-	margin-bottom: 15px
+}
+
+.nav-link:hover {
+	text-decoration: underline;
+	font-weight: bolder;
+	font-size: larger;
+	cursor: pointer;
+}
+
+.nav-link-visited {
+	color: blue;
+	text-decoration: underline;
+}
+
+.menuItems {
+	display: flex;
+	gap: 1em;
+	justify-items: center;
 }
 
 footer {
